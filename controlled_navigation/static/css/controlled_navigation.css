@@ -1,0 +1,9 @@
+/* CSS for XblockControlledNavigation */
+
+.controlled_navigation_block .count {
+    font-weight: bold;
+}
+
+.controlled_navigation_block p {
+    cursor: pointer;
+}
