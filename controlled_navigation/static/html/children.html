@@ -1,3 +1,16 @@
-<div class="controlled_navigation_block">
-    {% for child_content in children_contents %} {{ child_content|safe }} {% endfor %}
+{% load i18n %}
+
+<div class="controlled_navigation_block" style="display: grid; margin: 20px">
+    <div>
+        {{ child_content | safe }}
+    </div>
+    </br>
+    <div style="display: flex; justify-content: space-between">
+        {% if not is_first_child %}
+            <button id="prev">{% trans "< Previous" %}</button>
+        {% endif %}
+        {% if not is_last_child %}
+            <button id="next">{% trans "Next >" %}</button>
+        {% endif %}
+    </div>
 </div>
