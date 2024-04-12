@@ -38,7 +38,7 @@ class TestXblockControlledNavegation(TestCase):
 
         self.assertEqual(
             fragment.content.replace("\n", "").replace(" ", ""),
-            '<divclass="controlled_navegation_block"></div>',
+            '<divclass="controlled_navigation_block"></div>',
         )
 
     def test_student_view_with_children(self):
@@ -52,7 +52,7 @@ class TestXblockControlledNavegation(TestCase):
 
         self.assertEqual(
             fragment.content.replace("\n", "").replace(" ", ""),
-            '<divclass="controlled_navegation_block">MyXBlock:countisnow0</div>',
+            '<divclass="controlled_navigation_block">MyXBlock:countisnow0</div>',
         )
 
     def test_author_view_root(self):
@@ -65,7 +65,7 @@ class TestXblockControlledNavegation(TestCase):
         self.runtime.service = Mock(
             return_value=Mock(
                 render_template=Mock(
-                    return_value='<div class="controlled_navegation_block"> MyXBlock: count is now 0 </div>',
+                    return_value='<div class="controlled_navigation_block"> MyXBlock: count is now 0 </div>',
                 ),
             ),
         )
@@ -74,7 +74,7 @@ class TestXblockControlledNavegation(TestCase):
 
         self.assertEqual(
             fragment.content.replace("\n", "").replace(" ", ""),
-            '<divclass="controlled_navegation_block">MyXBlock:countisnow0</div>',
+            '<divclass="controlled_navigation_block">MyXBlock:countisnow0</div>',
         )
 
     def test_author_view(self):

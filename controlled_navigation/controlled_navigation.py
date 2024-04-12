@@ -6,10 +6,7 @@ from web_fragments.fragment import Fragment
 from xblock.core import XBlock
 from xblock.fields import Scope, String
 from xblock.utils.resources import ResourceLoader
-from xblock.utils.studio_editable import (
-    StudioContainerWithNestedXBlocksMixin,
-    StudioEditableXBlockMixin,
-)
+from xblock.utils.studio_editable import StudioContainerWithNestedXBlocksMixin, StudioEditableXBlockMixin
 
 LOCAL_RESOURCE_LOADER = ResourceLoader(__name__)
 
@@ -26,7 +23,7 @@ class XBlockControlledNavigation(
     XBlock for controlled navigation that can be applied to the child content.
     """
 
-    CATEGORY = "controlled_navegation"
+    CATEGORY = "controlled_navigation"
 
     display_name = String(
         display_name=_("Display Name"),
@@ -50,7 +47,10 @@ class XBlockControlledNavigation(
         """
         fragment = Fragment()
         root_xblock = context.get("root_xblock")
-        is_root = root_xblock and root_xblock.location == self.location
+        is_root = (
+            root_xblock
+            and root_xblock.location == self.location  # pylint: disable=no-member
+        )
         if is_root:
             # User has clicked the "View" link. Show a preview of all possible children:
             self.render_children(context, fragment, can_reorder=True, can_add=True)
