@@ -29,7 +29,7 @@ class XBlockControlledNavigation(
         display_name=_("Display Name"),
         help=_("The display name for this component."),
         scope=Scope.settings,
-        default=_("Controlled Navegation"),
+        default=_("Content with Controlled Navegation"),
     )
 
     editable_fields = [
