@@ -154,7 +154,7 @@ setup(
     author_email='technical@edunext.co',
     url='https://github.com/edunext/xblock-controlled-navigation',
     packages=find_packages(
-        include=['controlled_navigation', 'controlled_navigation.*'],
+        include=['controlled_navigation', 'controlled_navigation.*', '*.html'],
         exclude=["*tests"],
     ),
 
