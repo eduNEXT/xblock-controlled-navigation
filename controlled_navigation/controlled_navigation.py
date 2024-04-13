@@ -45,6 +45,20 @@ class XBlockControlledNavigation(
         default=False,
     )
 
+    next_button_text = String(
+        display_name=_("Next Button Text"),
+        help=_("Text for the next button."),
+        scope=Scope.settings,
+        default=_("Next Question"),
+    )
+
+    prev_button_text = String(
+        display_name=_("Previous Button Text"),
+        help=_("Text for the previous button."),
+        scope=Scope.settings,
+        default=_("Previous Question"),
+    )
+
     randomized_children_ids = ListField(
         display_name=_("Randomized Children IDs"),
         help=_("List of randomized children ids for each student."),
@@ -62,6 +76,8 @@ class XBlockControlledNavigation(
     editable_fields = [
         "display_name",
         "randomness",
+        "next_button_text",
+        "prev_button_text",
     ]
 
     def resource_string(self, path: str) -> str:

@@ -7,10 +7,10 @@
     </br>
     <div style="display: flex; justify-content: space-between">
         {% if not is_first_child %}
-            <button id="prev">{% trans "< Previous" %}</button>
+            <button id="prev">{% trans block.prev_button_text %}</button>
         {% endif %}
         {% if not is_last_child %}
-            <button id="next">{% trans "Next >" %}</button>
+            <button id="next">{% trans block.next_button_text %}</button>
         {% endif %}
     </div>
 </div>
