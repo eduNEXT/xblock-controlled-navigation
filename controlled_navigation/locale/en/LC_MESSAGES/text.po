@@ -1,0 +1,82 @@
+# edX translation file.
+# Copyright (C) 2024 EdX
+# This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
+# EdX Team <info@edx.org>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1a\n"
+"Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
+"POT-Creation-Date: 2023-06-13 08:00+0000\n"
+"PO-Revision-Date: 2023-06-13 09:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: controlled_navigation.py:32
+msgid "Display Name"
+msgstr ""
+
+#: controlled_navigation.py:33
+msgid "The display name for this component."
+msgstr ""
+
+#: controlled_navigation.py:35
+msgid "Content with Controlled Navigation"
+msgstr ""
+
+#: controlled_navigation.py:39
+msgid "Randomness"
+msgstr ""
+
+#: controlled_navigation.py:40
+msgid "When enabled, the children will be displayed in a random order."
+msgstr ""
+
+#: controlled_navigation.py:46
+msgid "Next Button Text"
+msgstr ""
+
+#: controlled_navigation.py:47
+msgid "Text for the next button."
+msgstr ""
+
+#: controlled_navigation.py:49
+msgid "Next Question"
+msgstr ""
+
+#: controlled_navigation.py:53
+msgid "Previous Button Text"
+msgstr ""
+
+#: controlled_navigation.py:54
+msgid "Text for the previous button."
+msgstr ""
+
+#: controlled_navigation.py:56
+msgid "Previous Question"
+msgstr ""
+
+#: controlled_navigation.py:60
+msgid "Randomized Children IDs"
+msgstr ""
+
+#: controlled_navigation.py:61
+msgid "List of randomized children ids for each student."
+msgstr ""
+
+#: controlled_navigation.py:67
+msgid "Current Child ID"
+msgstr ""
+
+#: controlled_navigation.py:68
+msgid "Current child id for the student."
+msgstr ""
+
+#: controlled_navigation.py:339
+msgid "Dummy"
+msgstr ""

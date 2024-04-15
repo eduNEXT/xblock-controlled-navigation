@@ -1,0 +1,82 @@
+# edX translation file.
+# Copyright (C) 2024 EdX
+# This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
+# EdX Team <info@edx.org>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1a\n"
+"Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
+"POT-Creation-Date: 2023-06-13 08:00+0000\n"
+"PO-Revision-Date: 2023-06-13 09:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: controlled_navigation.py:35
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#: controlled_navigation.py:36
+msgid "The display name for this component."
+msgstr "El nombre a mostrar para este componente."
+
+#: controlled_navigation.py:38
+msgid "Content with Controlled Navigation"
+msgstr "Contenido con navegación controlada"
+
+#: controlled_navigation.py:42
+msgid "Randomness"
+msgstr "Aleatoriedad"
+
+#: controlled_navigation.py:43
+msgid "When enabled, the children will be displayed in a random order."
+msgstr "Cuando está habilitado, los hijos se mostrarán en un orden aleatorio."
+
+#: controlled_navigation.py:49
+msgid "Next Button Text"
+msgstr "Texto del botón siguiente"
+
+#: controlled_navigation.py:50
+msgid "Text for the next button."
+msgstr "Texto para el botón siguiente."
+
+#: controlled_navigation.py:52
+msgid "Next Question"
+msgstr "Siguiente pregunta"
+
+#: controlled_navigation.py:56
+msgid "Previous Button Text"
+msgstr "Texto del botón anterior"
+
+#: controlled_navigation.py:57
+msgid "Text for the previous button."
+msgstr "Texto para el botón anterior."
+
+#: controlled_navigation.py:59
+msgid "Previous Question"
+msgstr "Pregunta anterior"
+
+#: controlled_navigation.py:63
+msgid "Randomized Children IDs"
+msgstr "IDs de hijos aleatorizados"
+
+#: controlled_navigation.py:64
+msgid "List of randomized children ids for each student."
+msgstr "Lista de IDs de hijos aleatorizados para cada estudiante."
+
+#: controlled_navigation.py:70
+msgid "Current Child ID"
+msgstr "ID de hijo actual"
+
+#: controlled_navigation.py:71
+msgid "Current child id for the student."
+msgstr "ID de hijo actual para el estudiante."
+
+#: controlled_navigation.py:342
+msgid "Dummy"
+msgstr ""
