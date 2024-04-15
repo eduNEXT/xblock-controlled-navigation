@@ -16,6 +16,8 @@ from xblock.utils.studio_editable import StudioContainerWithNestedXBlocksMixin, 
 
 from controlled_navigation.utils import _
 
+LOCAL_RESOURCE_LOADER = ResourceLoader(__name__)
+
 
 class XBlockControlledNavigation(
     StudioContainerWithNestedXBlocksMixin, StudioEditableXBlockMixin, XBlock
@@ -103,7 +105,7 @@ class XBlockControlledNavigation(
         Returns:
             str: The rendered template
         """
-        return self.loader.render_django_template(
+        return LOCAL_RESOURCE_LOADER.render_django_template(
             template_path, context, i18n_service=self.runtime.service(self, "i18n")
         )
 
@@ -128,6 +130,36 @@ class XBlockControlledNavigation(
             self.render_children(context, fragment, can_reorder=True, can_add=True)
         # else: When shown on a unit page, don't show any sort of preview -
         # just the status of this block in the validation area.
+
+        return fragment
+
+    def studio_view(self, context):
+        """
+        Render a form for editing this XBlock
+        """
+        fragment = Fragment()
+        context = {"fields": []}
+
+        # Build a list of all the fields that can be edited:
+        for field_name in self.editable_fields:
+            field = self.fields[field_name]
+            assert field.scope in (Scope.content, Scope.settings), (
+                "Only Scope.content or Scope.settings fields can be used with "
+                "StudioEditableXBlockMixin. Other scopes are for user-specific data and are "
+                "not generally created/configured by content authors in Studio."
+            )
+            field_info = self._make_field_info(field_name, field)
+            if field_info is not None:
+                if field_info["type"] == "string":
+                    field_info["default"] = self.ugettext(field_info.get("default"))
+                    field_info["value"] = self.ugettext(field_info.get("value"))
+                context["fields"].append(field_info)
+
+        fragment.content = self.loader.render_django_template(
+            "templates/studio_edit.html", context
+        )
+        fragment.add_javascript(self.loader.load_unicode("public/studio_edit.js"))
+        fragment.initialize_js("StudioEditableXBlockMixin")
 
         return fragment
 
