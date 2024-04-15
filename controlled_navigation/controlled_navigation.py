@@ -131,8 +131,8 @@ class XBlockControlledNavigation(
         """
         fragment = Fragment()
 
-        children = self.get_children_ids()
-        child_usage_key = UsageKey.from_string(self.get_current_child_id(children))
+        children_ids = self.get_children_ids()
+        child_usage_key = UsageKey.from_string(self.get_current_child_id(children_ids))
         child = self.runtime.get_block(child_usage_key)
         child_fragment = self._render_child_fragment(child, context, "student_view")
         fragment.add_fragment_resources(child_fragment)
@@ -140,14 +140,14 @@ class XBlockControlledNavigation(
         render_context = {
             "block": self,
             "child_content": child_fragment.content,
-            "is_first_child": self.is_first_child(children),
-            "is_last_child": self.is_last_child(children),
+            "is_first_child": self.is_first_child(children_ids),
+            "is_last_child": self.is_last_child(children_ids),
             **context,
         }
 
         fragment.add_content(
             LOCAL_RESOURCE_LOADER.render_django_template(
-                "static/html/children.html",
+                "static/html/controlled_navigation.html",
                 render_context,
                 i18n_service=self.runtime.service(self, "i18n"),
             )
@@ -155,6 +155,7 @@ class XBlockControlledNavigation(
         fragment.add_javascript(
             self.resource_string("static/js/src/controlled_navigation.js")
         )
+        fragment.add_css(self.resource_string("static/css/controlled_navigation.css"))
         fragment.initialize_js("XBlockControlledNavigation")
 
         return fragment

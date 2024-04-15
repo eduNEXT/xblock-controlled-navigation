@@ -1,9 +1,11 @@
-/* CSS for XblockControlledNavigation */
+/* CSS for XBlockControlledNavigation */
 
-.controlled_navigation_block .count {
-    font-weight: bold;
+.controlled-navigation-block {
+    display: grid;
+    margin: 20px;
 }
 
-.controlled_navigation_block p {
-    cursor: pointer;
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
 }

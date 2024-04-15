@@ -1,11 +1,11 @@
 {% load i18n %}
 
-<div class="controlled_navigation_block" style="display: grid; margin: 20px">
+<div class="controlled-navigation-block">
     <div>
         {{ child_content | safe }}
     </div>
     </br>
-    <div style="display: flex; justify-content: space-between">
+    <div class="navigation-buttons">
         {% if not is_first_child %}
             <button id="prev">{% trans block.prev_button_text %}</button>
         {% endif %}
