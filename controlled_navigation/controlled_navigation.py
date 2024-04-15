@@ -16,8 +16,6 @@ from xblock.utils.studio_editable import StudioContainerWithNestedXBlocksMixin, 
 
 from controlled_navigation.utils import _
 
-LOCAL_RESOURCE_LOADER = ResourceLoader(__name__)
-
 
 class XBlockControlledNavigation(
     StudioContainerWithNestedXBlocksMixin, StudioEditableXBlockMixin, XBlock
@@ -105,7 +103,7 @@ class XBlockControlledNavigation(
         Returns:
             str: The rendered template
         """
-        return LOCAL_RESOURCE_LOADER.render_django_template(
+        return self.loader.render_django_template(
             template_path, context, i18n_service=self.runtime.service(self, "i18n")
         )
 
