@@ -132,6 +132,10 @@ class XBlockControlledNavigation(
         fragment = Fragment()
 
         children_ids = self.get_children_ids()
+
+        if not children_ids:
+            return fragment
+
         child_usage_key = UsageKey.from_string(self.get_current_child_id(children_ids))
         child = self.runtime.get_block(child_usage_key)
         child_fragment = self._render_child_fragment(child, context, "student_view")
