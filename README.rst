@@ -1,151 +1,204 @@
-Used when course designers need to control the conditions under which a learner can access the contents of a subsection.
-#############################
+Controlled Navigation XBlock
+############################
 
-Testing with Docker
-********************
+|status-badge| |license-badge| |ci-badge|
 
-This XBlock comes with a Docker test environment ready to build, based on the xblock-sdk workbench. To build and run it::
 
-    $ make dev.run
+Purpose
+*******
 
-The XBlock SDK Workbench, including this XBlock, will be available on the list of XBlocks at http://localhost:8000
+Controlled Navigation XBlock allows course authors to create a sequence of
+components that learners will navigate through in a controlled manner. The
+course author can configure the order of the components, and the learner will
+be able to navigate through them using the navigation buttons.
 
-Translating
+This XBlock has been created as an open source contribution to the Open
+edX platform and has been funded by **Unidigital** project from the Spanish
+Government - 2023.
+
+
+Enabling the XBlock in a course
+*******************************
+
+Once the XBlock has been installed in your Open edX installation, you can
+enable it in a course from Studio through the **Advanced Settings**.
+
+1. Go to Studio and open the course to which you want to add the XBlock.
+2. Go to **Settings** > **Advanced Settings** from the top menu.
+3. Search for **Advanced Module List** and add ``"controlled_navigation"``
+   to the list.
+4. Click **Save Changes** button.
+
+
+Adding a Controlled Navigation Component to a course unit
+*********************************************************
+
+From Studio, you can add the Controlled Navigation Component to a course unit.
+
+1. Click on the **Advanced** button in **Add New Component**.
+
+   .. image:: https://github.com/eduNEXT/xblock-controlled-navigation/assets/64033729/1b52b5fa-88ca-4bae-b141-19b9c1e4063f
+      :alt: Open Advanced Components
+
+2. Select **Content With Controlled Navigation** from the list.
+
+   .. image:: https://github.com/eduNEXT/xblock-controlled-navigation/assets/64033729/b2b29313-feb3-40b4-80c7-c2b868d75304
+      :alt: Select Controlled Navigation Component
+
+3. Configure the component as needed.
+
+
+View from the Learning Management System (CMS)
+**********************************************
+
+The **Controlled Navigation** component has a set of settings that can be
+configured by the course author.
+
+.. image:: https://github.com/eduNEXT/xblock-controlled-navigation/assets/64033729/ebcc1f59-f7b6-4b9c-8a94-8c216d959431
+    :alt: Settings for the Controlled Navigation component
+
+The **Controlled Navigation** component has the following settings:
+
+- **Randomness**: If enabled, the children components will be displayed in a
+  random order. This randomization is unique to each learner. If disabled, the
+  children components will be displayed in the order they were added to the
+  Controlled Navigation component.
+- **Next Button Text**: The text that will be displayed in the button that
+  allows the learner to navigate to the next component.
+- **Previous Button Text**: The text that will be displayed in the button that
+  allows the learner to navigate to the previous component.
+
+Here is how the **Controlled Navigation** component looks in the
+**Author View**:
+
+.. image:: https://github.com/eduNEXT/xblock-controlled-navigation/assets/64033729/e87a233a-757a-44b4-bbe2-5080fbdc9400
+    :alt: Author view for component
+
+When accessing the component by selecting the **VIEW ➔** button, you will see
+the list of children components that are part of the Controlled Navigation
+component.
+
+.. image:: https://github.com/eduNEXT/xblock-controlled-navigation/assets/64033729/b30221b8-e6ee-4584-95fc-72eaf75a4b1d
+    :alt: View of the component
+
+Here is an example of a Controlled Navigation component with a **Problem**
+component as a child:
+
+.. image:: https://github.com/eduNEXT/xblock-controlled-navigation/assets/64033729/4101cef0-c172-41be-9596-630c106155db
+    :alt: Example of a Controlled Navigation component with a Problem component as a child
+
+
+View from the Learning Management System (LMS)
+**********************************************
+
+When a learner accesses the course, they will see the children components of
+the Controlled Navigation component one by one. The learner will be able to
+navigate to the next component by clicking the **Next** button, and to the
+previous component by clicking the **Previous** button.
+
+.. image:: https://github.com/eduNEXT/xblock-controlled-navigation/assets/64033729/6ed1627f-f7fc-4006-a489-63f39523241c
+    :alt: View of the component in the LMS
+
+
+Experimenting with this XBlock in the Workbench
+************************************************
+
+`XBlock`_ is the Open edX component architecture for building custom learning
+interactive components.
+
+You can see the Controlled Navigation component in action in the XBlock
+Workbench. Running the Workbench requires having docker running.
+
+.. code::
+
+    git clone git@github.com:eduNEXT/xblock-controlled-navigation
+    virtualenv venv/
+    source venv/bin/activate
+    cd xblock-controlled-navigation
+    make upgrade
+    make install
+    make dev.run
+
+Once the process is done, you can interact with the Controlled Navigation
+XBlock in the Workbench by navigating to http://localhost:8000
+
+For details regarding how to deploy this or any other XBlock in the Open edX
+platform, see the `installing-the-xblock`_ documentation.
+
+.. _XBlock: https://openedx.org/r/xblock
+.. _installing-the-xblock: https://edx.readthedocs.io/projects/xblock-tutorial/en/latest/edx_platform/devstack.html#installing-the-xblock
+
+
+Getting Help
 *************
 
-Internationalization (i18n) is when a program is made aware of multiple languages.
-Localization (l10n) is adapting a program to local language and cultural habits.
+If you're having trouble, the Open edX community has active discussion forums
+available at https://discuss.openedx.org where you can connect with others in
+the community.
 
-Use the locale directory to provide internationalized strings for your XBlock project.
-For more information on how to enable translations, visit the
-`Open edX XBlock tutorial on Internationalization <https://edx.readthedocs.org/projects/xblock-tutorial/en/latest/edx_platform/edx_lms.html>`_.
+Also, real-time conversations are always happening on the Open edX community
+Slack channel. You can request a `Slack invitation`_, then join the
+`community Slack workspace`_.
 
-This cookiecutter template uses `django-statici18n <https://django-statici18n.readthedocs.io/en/latest/>`_
-to provide translations to static javascript using ``gettext``.
+For anything non-trivial, the best path is to open an `issue`_ in this
+repository with as many details about the issue you are facing as you can
+provide.
 
-The included Makefile contains targets for extracting, compiling and validating translatable strings.
-The general steps to provide multilingual messages for a Python program (or an XBlock) are:
+For more information about these options, see the `Getting Help`_ page.
 
-1. Mark translatable strings.
-2. Run i18n tools to create raw message catalogs.
-3. Create language specific translations for each message in the catalogs.
-4. Use ``gettext`` to translate strings.
-
-1. Mark translatable strings
-=============================
-
-Mark translatable strings in python::
+.. _Slack invitation: https://openedx.org/slack
+.. _community Slack workspace: https://openedx.slack.com/
+.. _issue: https://github.com/eduNEXT/xblock-controlled-navigation/issues
+.. _Getting Help: https://openedx.org/getting-help
 
 
-    from django.utils.translation import ugettext as _
+License
+*******
 
-    # Translators: This comment will appear in the `.po` file.
-    message = _("This will be marked.")
+The code in this repository is licensed under the AGPL-3.0 unless otherwise
+noted.
 
-See `edx-developer-guide <https://edx.readthedocs.io/projects/edx-developer-guide/en/latest/internationalization/i18n.html#python-source-code>`__
-for more information.
-
-You can also use ``gettext`` to mark strings in javascript::
+Please see `LICENSE.txt <LICENSE.txt>`_ for details.
 
 
-    // Translators: This comment will appear in the `.po` file.
-    var message = gettext("Custom message.");
+Contributing
+************
 
-See `edx-developer-guide <https://edx.readthedocs.io/projects/edx-developer-guide/en/latest/internationalization/i18n.html#javascript-files>`__
-for more information.
+Contributions are very welcome.
 
-2. Run i18n tools to create Raw message catalogs
-=================================================
+This project is currently accepting all types of contributions, bug fixes,
+security fixes, maintenance work, or new features.  However, please make sure
+to have a discussion about your new feature idea with the maintainers prior to
+beginning development to maximize the chances of your change being accepted.
+You can start a conversation by creating a new issue on this repo summarizing
+your idea.
 
-This cookiecutter template offers multiple make targets which are shortcuts to
-use `edx-i18n-tools <https://github.com/openedx/i18n-tools>`_.
+Translations
+============
 
-After marking strings as translatable we have to create the raw message catalogs.
-These catalogs are created in ``.po`` files. For more information see
-`GNU PO file documentation <https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html>`_.
-These catalogs can be created by running::
+This Xblock is initially available in English and Spanish. You can help by
+translating this component to other languages. Follow the steps below:
+
+1. Create a folder for the translations in ``locale/``, eg:
+   ``locale/fr_FR/LC_MESSAGES/``, and create your ``text.po``
+   file with all the translations.
+2. Run ``make compile_translations``, this will generate the ``.mo`` file.
+3. Create a pull request with your changes.
 
 
-    $ make extract_translations
+Reporting Security Issues
+*************************
 
-The previous command will create the necessary ``.po`` files under
-``xblock-controlled-navigation/controlled_navigation/conf/locale/en/LC_MESSAGES/text.po``.
-The ``text.po`` file is created from the ``django-partial.po`` file created by
-``django-admin makemessages`` (`makemessages documentation <https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#message-files>`_),
-this is why you will not see a ``django-partial.po`` file.
+Please do not report a potential security issue in public. Please email
+security@edunext.co.
 
-3. Create language specific translations
-==============================================
 
-3.1 Add translated strings
----------------------------
+.. |ci-badge| image:: https://github.com/eduNEXT/xblock-controlled-navigation/actions/workflows/ci.yml/badge.svg?branch=main
+    :target: https://github.com/eduNEXT/xblock-controlled-navigation/actions
+    :alt: CI
 
-After creating the raw message catalogs, all translations should be filled out by the translator.
-One or more translators must edit the entries created in the message catalog, i.e. the ``.po`` file(s).
-The format of each entry is as follows::
+.. |license-badge| image:: https://img.shields.io/github/license/eduNEXT/xblock-controlled-navigation.svg
+    :target: https://github.com/eduNEXT/xblock-controlled-navigation/blob/main/LICENSE.txt
+    :alt: License
 
-    #  translator-comments
-    A. extracted-comments
-    #: reference…
-    #, flag…
-    #| msgid previous-untranslated-string
-    msgid 'untranslated message'
-    msgstr 'mensaje traducido (translated message)'
-
-For more information see
-`GNU PO file documentation <https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html>`_.
-
-To use translations from transifex use the follow Make target to pull translations::
-
-    $ make pull_translations
-
-See `config instructions <https://github.com/openedx/i18n-tools#transifex-commands>`_ for information on how to set up your
-transifex credentials.
-
-See `transifex documentation <https://docs.transifex.com/integrations/django>`_ for more details about integrating
-django with transiflex.
-
-3.2 Compile translations
--------------------------
-
-Once translations are in place, use the following Make target to compile the translation catalogs ``.po`` into
-``.mo`` message files::
-
-    $ make compile_translations
-
-The previous command will compile ``.po`` files using
-``django-admin compilemessages`` (`compilemessages documentation <https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#compiling-message-files>`_).
-After compiling the ``.po`` file(s), ``django-statici18n`` is used to create language specific catalogs. See
-``django-statici18n`` `documentation <https://django-statici18n.readthedocs.io/en/latest/>`_ for more information.
-
-To upload translations to transiflex use the follow Make target::
-
-    $ make push_translations
-
-See `config instructions <https://github.com/openedx/i18n-tools#transifex-commands>`_ for information on how to set up your
-transifex credentials.
-
-See `transifex documentation <https://docs.transifex.com/integrations/django>`_ for more details about integrating
-django with transiflex.
-
- **Note:** The ``dev.run`` make target will automatically compile any translations.
-
- **Note:** To check if the source translation files (``.po``) are up-to-date run::
-
-     $ make detect_changed_source_translations
-
-4. Use ``gettext`` to translate strings
-========================================
-
-Django will automatically use ``gettext`` and the compiled translations to translate strings.
-
-Troubleshooting
-****************
-
-If there are any errors compiling ``.po`` files run the following command to validate your ``.po`` files::
-
-    $ make validate
-
-See `django's i18n troubleshooting documentation
-<https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#troubleshooting-gettext-incorrectly-detects-python-format-in-strings-with-percent-signs>`_
-for more information.
+.. |status-badge| image:: https://img.shields.io/badge/Status-Maintained-brightgreen
