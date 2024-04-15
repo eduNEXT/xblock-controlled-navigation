@@ -42,7 +42,9 @@ msgid "Next Button Text"
 msgstr ""
 
 #: controlled_navigation.py:47
-msgid "Text for the next button."
+msgid ""
+"Text that will be displayed on the next button to navigate to the next "
+"child."
 msgstr ""
 
 #: controlled_navigation.py:49
@@ -54,7 +56,9 @@ msgid "Previous Button Text"
 msgstr ""
 
 #: controlled_navigation.py:54
-msgid "Text for the previous button."
+msgid ""
+"Text that will be displayed on the previous button to navigate to the "
+"previous child."
 msgstr ""
 
 #: controlled_navigation.py:56
@@ -77,6 +81,6 @@ msgstr ""
 msgid "Current child id for the student."
 msgstr ""
 
-#: controlled_navigation.py:339
+#: controlled_navigation.py:369
 msgid "Dummy"
 msgstr ""

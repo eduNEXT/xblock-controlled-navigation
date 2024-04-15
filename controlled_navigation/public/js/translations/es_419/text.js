@@ -25,21 +25,17 @@
   django.catalog = django.catalog || {};
   
   const newcatalog = {
-    "Content with Controlled Navigation": "Contenido con navegaci\u00f3n controlada",
-    "Current Child ID": "ID de hijo actual",
-    "Current child id for the student.": "ID de hijo actual para el estudiante.",
-    "Display Name": "Nombre a mostrar",
-    "List of randomized children ids for each student.": "Lista de IDs de hijos aleatorizados para cada estudiante.",
-    "Next Button Text": "Texto del bot\u00f3n siguiente",
-    "Next Question": "Siguiente pregunta",
-    "Previous Button Text": "Texto del bot\u00f3n anterior",
-    "Previous Question": "Pregunta anterior",
-    "Randomized Children IDs": "IDs de hijos aleatorizados",
+    "Content with Controlled Navigation": "Contenido con Navegaci\u00f3n Controlada",
+    "Display Name": "Nombre a Mostrar",
+    "Next Button Text": "Texto del Bot\u00f3n Siguiente",
+    "Next Question": "Siguiente Pregunta",
+    "Previous Button Text": "Texto del Bot\u00f3n Anterior",
+    "Previous Question": "Anterior Pregunta",
     "Randomness": "Aleatoriedad",
-    "Text for the next button.": "Texto para el bot\u00f3n siguiente.",
-    "Text for the previous button.": "Texto para el bot\u00f3n anterior.",
+    "Text that will be displayed on the next button to navigate to the next child.": "Texto que se mostrar\u00e1 en el bot\u00f3n siguiente para navegar al siguiente hijo.",
+    "Text that will be displayed on the previous button to navigate to the previous child.": "Texto que se mostrar\u00e1 en el bot\u00f3n anterior para navegar al hijo anterior.",
     "The display name for this component.": "El nombre a mostrar para este componente.",
-    "When enabled, the children will be displayed in a random order.": "Cuando est\u00e1 habilitado, los hijos se mostrar\u00e1n en un orden aleatorio."
+    "When enabled, the children will be displayed in a random order.": "Cuando est\u00e1 habilitado, los hijos se mostrar\u00e1n en orden aleatorio."
   };
   for (const key in newcatalog) {
     django.catalog[key] = newcatalog[key];

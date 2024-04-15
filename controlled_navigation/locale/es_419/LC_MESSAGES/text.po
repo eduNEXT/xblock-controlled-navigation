@@ -3,6 +3,9 @@
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 # EdX Team <info@edx.org>, 2024.
 #
+# Translators:
+# Bryann Valderrama <bryann.valderrama@edunext.co>, 2024
+
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
@@ -17,66 +20,71 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: controlled_navigation.py:35
+#: controlled_navigation.py:32
 msgid "Display Name"
-msgstr "Nombre a mostrar"
+msgstr "Nombre a Mostrar"
 
-#: controlled_navigation.py:36
+#: controlled_navigation.py:33
 msgid "The display name for this component."
 msgstr "El nombre a mostrar para este componente."
 
-#: controlled_navigation.py:38
+#: controlled_navigation.py:35
 msgid "Content with Controlled Navigation"
-msgstr "Contenido con navegación controlada"
+msgstr "Contenido con Navegación Controlada"
 
-#: controlled_navigation.py:42
+#: controlled_navigation.py:39
 msgid "Randomness"
 msgstr "Aleatoriedad"
 
-#: controlled_navigation.py:43
+#: controlled_navigation.py:40
 msgid "When enabled, the children will be displayed in a random order."
-msgstr "Cuando está habilitado, los hijos se mostrarán en un orden aleatorio."
+msgstr "Cuando está habilitado, los hijos se mostrarán en orden aleatorio."
+
+#: controlled_navigation.py:46
+msgid "Next Button Text"
+msgstr "Texto del Botón Siguiente"
+
+#: controlled_navigation.py:47
+msgid ""
+"Text that will be displayed on the next button to navigate to the next "
+"child."
+msgstr ""
+"Texto que se mostrará en el botón siguiente para navegar al siguiente hijo."
 
 #: controlled_navigation.py:49
-msgid "Next Button Text"
-msgstr "Texto del botón siguiente"
-
-#: controlled_navigation.py:50
-msgid "Text for the next button."
-msgstr "Texto para el botón siguiente."
-
-#: controlled_navigation.py:52
 msgid "Next Question"
-msgstr "Siguiente pregunta"
+msgstr "Siguiente Pregunta"
+
+#: controlled_navigation.py:53
+msgid "Previous Button Text"
+msgstr "Texto del Botón Anterior"
+
+msgid ""
+"Text that will be displayed on the previous button to navigate to the "
+"previous child."
+msgstr ""
+"Texto que se mostrará en el botón anterior para navegar al hijo anterior."
 
 #: controlled_navigation.py:56
-msgid "Previous Button Text"
-msgstr "Texto del botón anterior"
-
-#: controlled_navigation.py:57
-msgid "Text for the previous button."
-msgstr "Texto para el botón anterior."
-
-#: controlled_navigation.py:59
 msgid "Previous Question"
-msgstr "Pregunta anterior"
+msgstr "Anterior Pregunta"
 
-#: controlled_navigation.py:63
+#: controlled_navigation.py:60
 msgid "Randomized Children IDs"
-msgstr "IDs de hijos aleatorizados"
+msgstr ""
 
-#: controlled_navigation.py:64
+#: controlled_navigation.py:61
 msgid "List of randomized children ids for each student."
-msgstr "Lista de IDs de hijos aleatorizados para cada estudiante."
+msgstr ""
 
-#: controlled_navigation.py:70
+#: controlled_navigation.py:67
 msgid "Current Child ID"
-msgstr "ID de hijo actual"
+msgstr ""
 
-#: controlled_navigation.py:71
+#: controlled_navigation.py:68
 msgid "Current child id for the student."
-msgstr "ID de hijo actual para el estudiante."
+msgstr ""
 
-#: controlled_navigation.py:342
+#: controlled_navigation.py:369
 msgid "Dummy"
 msgstr ""
