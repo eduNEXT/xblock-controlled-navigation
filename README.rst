@@ -63,6 +63,10 @@ The **Controlled Navigation** component has the following settings:
   random order. This randomization is unique to each learner. If disabled, the
   children components will be displayed in the order they were added to the
   Controlled Navigation component.
+- **Subset Size**: If the **Randomness** setting is enabled, this setting
+  allows the course author to specify the number of children components that
+  will be displayed to the learner. By default, it is disabled (0), and all the
+  children components will be displayed.
 - **Forward Navigation Only**: If enabled, the learner will only be able to
   navigate to the next component. If disabled, the learner will be able to
   navigate to the next and previous components. By default, it is enabled.
