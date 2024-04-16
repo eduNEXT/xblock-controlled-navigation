@@ -37,21 +37,36 @@ class XBlockControlledNavigation(
 
     randomness = Boolean(
         display_name=_("Randomness"),
-        help=_("When enabled, the children of the component will be displayed in a random order."),
+        help=_(
+            "When enabled, the children of the component will be displayed in a random order."
+        ),
         scope=Scope.settings,
         default=False,
     )
 
+    forward_navigation_only = Boolean(
+        display_name=_("Forward Navigation Only"),
+        help=_(
+            "When enabled, the student can only navigate forward through the components' children."
+        ),
+        scope=Scope.settings,
+        default=True,
+    )
+
     next_button_text = String(
         display_name=_("Next Button Text"),
-        help=_("Text for the next button used to navigate forward through the components' children."),
+        help=_(
+            "Text for the next button used to navigate forward through the components' children."
+        ),
         scope=Scope.settings,
         default=_("Next Question"),
     )
 
     prev_button_text = String(
         display_name=_("Previous Button Text"),
-        help=_("Text for the previous button used to navigate back through the components' children."),
+        help=_(
+            "Text for the previous button used to navigate back through the components' children."
+        ),
         scope=Scope.settings,
         default=_("Previous Question"),
     )
@@ -73,6 +88,7 @@ class XBlockControlledNavigation(
     editable_fields = [
         "display_name",
         "randomness",
+        "forward_navigation_only",
         "next_button_text",
         "prev_button_text",
     ]
@@ -121,10 +137,7 @@ class XBlockControlledNavigation(
         """
         fragment = Fragment()
         root_xblock = context.get("root_xblock")
-        is_root = (
-            root_xblock
-            and root_xblock.location == self.location
-        )
+        is_root = root_xblock and root_xblock.location == self.location
         if is_root:
             # User has clicked the "View" link. Show a preview of all possible children:
             self.render_children(context, fragment, can_reorder=True, can_add=True)
@@ -186,7 +199,6 @@ class XBlockControlledNavigation(
         child = self.runtime.get_block(child_usage_key)
         child_fragment = self._render_child_fragment(child, context, "student_view")
         fragment.add_fragment_resources(child_fragment)
-
         render_context = {
             "block": self,
             "child_content": child_fragment.content,
