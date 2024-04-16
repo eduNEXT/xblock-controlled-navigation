@@ -8,7 +8,7 @@ from django.utils import translation
 from opaque_keys.edx.keys import UsageKey
 from web_fragments.fragment import Fragment
 from xblock.core import XBlock
-from xblock.fields import Boolean
+from xblock.fields import Boolean, Integer
 from xblock.fields import List as ListField
 from xblock.fields import Scope, String
 from xblock.utils.resources import ResourceLoader
@@ -42,6 +42,18 @@ class XBlockControlledNavigation(
         ),
         scope=Scope.settings,
         default=False,
+    )
+
+    subset_size = Integer(
+        display_name=_("Subset Size"),
+        help=_(
+            "When randomness is enabled, allows choose a subset "
+            "of the total number of children components. If set to 0, "
+            "it will display all children components. NOTE: This setting"
+            "is only updated the first time the component is used."
+        ),
+        scope=Scope.settings,
+        default=0,
     )
 
     forward_navigation_only = Boolean(
@@ -88,6 +100,7 @@ class XBlockControlledNavigation(
     editable_fields = [
         "display_name",
         "randomness",
+        "subset_size",
         "forward_navigation_only",
         "next_button_text",
         "prev_button_text",
@@ -256,9 +269,13 @@ class XBlockControlledNavigation(
     def generate_randomized_children_ids(self) -> None:
         """
         Generate a randomized list of children ids.
+
+        If the subset size is set, it will generate a list of children ids with the
+        subset size. Otherwise, it will generate a list with all children ids.
         """
-        self.randomized_children_ids = [str(child) for child in self.children]
-        random.shuffle(self.randomized_children_ids)
+        children_ids = self.get_parsed_children_ids()
+        size = self.subset_size or len(children_ids)
+        self.randomized_children_ids = random.sample(children_ids, size)
 
     def get_parsed_children_ids(self) -> List[str]:
         """

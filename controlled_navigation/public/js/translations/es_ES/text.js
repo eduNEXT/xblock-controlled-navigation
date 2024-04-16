@@ -33,11 +33,13 @@
     "Previous Button Text": "Texto del Bot\u00f3n Anterior",
     "Previous Question": "Pregunta Anterior",
     "Randomness": "Aleatoriedad",
+    "Subset Size": "Tama\u00f1o del Subconjunto",
     "Text for the next button used to navigate forward through the components' children.": "Texto para el bot\u00f3n siguiente utilizado para navegar hacia adelante a trav\u00e9s de los hijos del componente.",
     "Text for the previous button used to navigate back through the components' children.": "Texto para el bot\u00f3n anterior utilizado para navegar hacia atr\u00e1s a trav\u00e9s de los hijos del componente.",
     "The display name for this component.": "El nombre a mostrar para este componente.",
     "When enabled, the children of the component will be displayed in a random order.": "Cuando est\u00e1 habilitado, los hijos del componente se mostrar\u00e1n en un orden aleatorio.",
-    "When enabled, the student can only navigate forward through the components' children.": "Cuando est\u00e1 habilitado, el estudiante solo puede navegar hacia adelante a trav\u00e9s de los hijos del componente."
+    "When enabled, the student can only navigate forward through the components' children.": "Cuando est\u00e1 habilitado, el estudiante solo puede navegar hacia adelante a trav\u00e9s de los hijos del componente.",
+    "When randomness is enabled, allows choose a subset of the total number of children components. If set to 0, it will display all children components. NOTE: This settingis only updated the first time the component is used.": "Cuando la aleatoriedad est\u00e1 habilitada, permite elegir un subconjunto del n\u00famero total de componentes hijos. Si se establece en 0, mostrar\u00e1 todos los componentes hijos. NOTA: Esta configuraci\u00f3n solo se actualiza la primera vez que se utiliza el componente."
   };
   for (const key in newcatalog) {
     django.catalog[key] = newcatalog[key];
