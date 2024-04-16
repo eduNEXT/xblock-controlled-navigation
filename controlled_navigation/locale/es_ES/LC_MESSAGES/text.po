@@ -45,10 +45,25 @@ msgstr ""
 "aleatorio."
 
 #: controlled_navigation.py:48
+msgid "Subset Size"
+msgstr "Tamaño del Subconjunto"
+
+#: controlled_navigation.py:50
+msgid ""
+"When randomness is enabled, allows choose a subset of the total number of "
+"children components. If set to 0, it will display all children components. "
+"NOTE: This settingis only updated the first time the component is used."
+msgstr ""
+"Cuando la aleatoriedad está habilitada, permite elegir un subconjunto del "
+"número total de componentes hijos. Si se establece en 0, mostrará todos los "
+"componentes hijos. NOTA: Esta configuración solo se actualiza la primera vez "
+"que se utiliza el componente."
+
+#: controlled_navigation.py:60
 msgid "Forward Navigation Only"
 msgstr "Solo Navegación Hacia Adelante"
 
-#: controlled_navigation.py:50
+#: controlled_navigation.py:62
 msgid ""
 "When enabled, the student can only navigate forward through the components' "
 "children."
@@ -56,11 +71,11 @@ msgstr ""
 "Cuando está habilitado, el estudiante solo puede navegar hacia adelante a "
 "través de los hijos del componente."
 
-#: controlled_navigation.py:57
+#: controlled_navigation.py:69
 msgid "Next Button Text"
 msgstr "Texto del Botón Siguiente"
 
-#: controlled_navigation.py:59
+#: controlled_navigation.py:71
 msgid ""
 "Text for the next button used to navigate forward through the components' "
 "children."
@@ -68,15 +83,15 @@ msgstr ""
 "Texto para el botón siguiente utilizado para navegar hacia adelante a través "
 "de los hijos del componente."
 
-#: controlled_navigation.py:62
+#: controlled_navigation.py:74
 msgid "Next Question"
 msgstr "Siguiente Pregunta"
 
-#: controlled_navigation.py:66
+#: controlled_navigation.py:78
 msgid "Previous Button Text"
 msgstr "Texto del Botón Anterior"
 
-#: controlled_navigation.py:68
+#: controlled_navigation.py:80
 msgid ""
 "Text for the previous button used to navigate back through the components' "
 "children."
@@ -84,26 +99,26 @@ msgstr ""
 "Texto para el botón anterior utilizado para navegar hacia atrás a través de "
 "los hijos del componente."
 
-#: controlled_navigation.py:71
+#: controlled_navigation.py:83
 msgid "Previous Question"
 msgstr "Pregunta Anterior"
 
-#: controlled_navigation.py:75
+#: controlled_navigation.py:87
 msgid "Randomized Children IDs"
 msgstr ""
 
-#: controlled_navigation.py:76
+#: controlled_navigation.py:88
 msgid "List of randomized children ids for each student."
 msgstr ""
 
-#: controlled_navigation.py:82
+#: controlled_navigation.py:94
 msgid "Current Child ID"
 msgstr ""
 
-#: controlled_navigation.py:83
+#: controlled_navigation.py:95
 msgid "Current child id for the student."
 msgstr ""
 
-#: controlled_navigation.py:387
+#: controlled_navigation.py:403
 msgid "Dummy"
 msgstr ""

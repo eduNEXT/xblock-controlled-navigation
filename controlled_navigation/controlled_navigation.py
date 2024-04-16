@@ -48,7 +48,9 @@ class XBlockControlledNavigation(
         display_name=_("Subset Size"),
         help=_(
             "When randomness is enabled, allows choose a subset "
-            "of the total number of children components."
+            "of the total number of children components. If set to 0, "
+            "it will display all children components. NOTE: This setting"
+            "is only updated the first time the component is used."
         ),
         scope=Scope.settings,
         default=0,
