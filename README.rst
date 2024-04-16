@@ -63,6 +63,9 @@ The **Controlled Navigation** component has the following settings:
   random order. This randomization is unique to each learner. If disabled, the
   children components will be displayed in the order they were added to the
   Controlled Navigation component.
+- **Forward Navigation Only**: If enabled, the learner will only be able to
+  navigate to the next component. If disabled, the learner will be able to
+  navigate to the next and previous components. By default, it is enabled.
 - **Next Button Text**: The text that will be displayed in the button that
   allows the learner to navigate to the next component.
 - **Previous Button Text**: The text that will be displayed in the button that
