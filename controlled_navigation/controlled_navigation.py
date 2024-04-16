@@ -199,7 +199,6 @@ class XBlockControlledNavigation(
         child = self.runtime.get_block(child_usage_key)
         child_fragment = self._render_child_fragment(child, context, "student_view")
         fragment.add_fragment_resources(child_fragment)
-
         render_context = {
             "block": self,
             "child_content": child_fragment.content,
