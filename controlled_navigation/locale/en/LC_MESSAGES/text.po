@@ -33,56 +33,66 @@ msgstr ""
 msgid "Randomness"
 msgstr ""
 
-#: controlled_navigation.py:40
+#: controlled_navigation.py:41
 msgid ""
 "When enabled, the children of the component will be displayed in a random "
 "order."
 msgstr ""
 
-#: controlled_navigation.py:46
+#: controlled_navigation.py:48
+msgid "Forward Navigation Only"
+msgstr ""
+
+#: controlled_navigation.py:50
+msgid ""
+"When enabled, the student can only navigate forward through the components' "
+"children."
+msgstr ""
+
+#: controlled_navigation.py:57
 msgid "Next Button Text"
 msgstr ""
 
-#: controlled_navigation.py:47
+#: controlled_navigation.py:59
 msgid ""
 "Text for the next button used to navigate forward through the components' "
 "children."
 msgstr ""
 
-#: controlled_navigation.py:49
+#: controlled_navigation.py:62
 msgid "Next Question"
 msgstr ""
 
-#: controlled_navigation.py:53
+#: controlled_navigation.py:66
 msgid "Previous Button Text"
 msgstr ""
 
-#: controlled_navigation.py:54
+#: controlled_navigation.py:68
 msgid ""
 "Text for the previous button used to navigate back through the components' "
 "children."
 msgstr ""
 
-#: controlled_navigation.py:56
+#: controlled_navigation.py:71
 msgid "Previous Question"
 msgstr ""
 
-#: controlled_navigation.py:60
+#: controlled_navigation.py:75
 msgid "Randomized Children IDs"
 msgstr ""
 
-#: controlled_navigation.py:61
+#: controlled_navigation.py:76
 msgid "List of randomized children ids for each student."
 msgstr ""
 
-#: controlled_navigation.py:67
+#: controlled_navigation.py:82
 msgid "Current Child ID"
 msgstr ""
 
-#: controlled_navigation.py:68
+#: controlled_navigation.py:83
 msgid "Current child id for the student."
 msgstr ""
 
-#: controlled_navigation.py:374
+#: controlled_navigation.py:387
 msgid "Dummy"
 msgstr ""
