@@ -5,7 +5,10 @@
     margin: 20px;
 }
 
-.navigation-buttons {
-    display: flex;
-    justify-content: space-between;
+.prev-button {
+    float: left;
+}
+
+.next-button {
+    float: right;
 }

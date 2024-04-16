@@ -5,12 +5,12 @@
         {{ child_content | safe }}
     </div>
     </br>
-    <div class="navigation-buttons">
+    <div>
         {% if not is_first_child %}
-            <button id="prev">{% trans block.prev_button_text %}</button>
+            <button class="prev-button" id="prev">{% trans block.prev_button_text %}</button>
         {% endif %}
         {% if not is_last_child %}
-            <button id="next">{% trans block.next_button_text %}</button>
+            <button class="next-button" id="next">{% trans block.next_button_text %}</button>
         {% endif %}
     </div>
 </div>
