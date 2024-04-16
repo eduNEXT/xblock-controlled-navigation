@@ -14,12 +14,9 @@ from xblock.fields import Scope, String
 from xblock.utils.resources import ResourceLoader
 from xblock.utils.studio_editable import StudioContainerWithNestedXBlocksMixin, StudioEditableXBlockMixin
 
+from controlled_navigation.utils import _
+
 LOCAL_RESOURCE_LOADER = ResourceLoader(__name__)
-
-
-def _(text):
-    """Make '_' a no-op so we can scrape strings."""
-    return text
 
 
 class XBlockControlledNavigation(
@@ -35,7 +32,7 @@ class XBlockControlledNavigation(
         display_name=_("Display Name"),
         help=_("The display name for this component."),
         scope=Scope.settings,
-        default=_("Content with Controlled Navegation"),
+        default=_("Content with Controlled Navigation"),
     )
 
     randomness = Boolean(
@@ -93,6 +90,25 @@ class XBlockControlledNavigation(
         data = pkg_resources.resource_string(__name__, path)
         return data.decode("utf8")
 
+    def render_template(
+        self, template_path: str, context: Optional[dict] = None
+    ) -> str:
+        """
+        Render a template with the given context.
+
+        The template is translated according to the user's language.
+
+        Args:
+            template_path (str): The path to the template
+            context(dict, optional): The context to render in the template
+
+        Returns:
+            str: The rendered template
+        """
+        return LOCAL_RESOURCE_LOADER.render_django_template(
+            template_path, context, i18n_service=self.runtime.service(self, "i18n")
+        )
+
     def author_view(self, context: dict) -> Fragment:
         """
         Render the Studio preview by rendering each child so that they can all be seen and edited.
@@ -114,6 +130,36 @@ class XBlockControlledNavigation(
             self.render_children(context, fragment, can_reorder=True, can_add=True)
         # else: When shown on a unit page, don't show any sort of preview -
         # just the status of this block in the validation area.
+
+        return fragment
+
+    def studio_view(self, context):
+        """
+        Render a form for editing this XBlock.
+        """
+        fragment = Fragment()
+        context = {"fields": []}
+
+        # Build a list of all the fields that can be edited:
+        for field_name in self.editable_fields:
+            field = self.fields[field_name]  # pylint: disable=unsubscriptable-object
+            assert field.scope in (Scope.content, Scope.settings), (
+                "Only Scope.content or Scope.settings fields can be used with "
+                "StudioEditableXBlockMixin. Other scopes are for user-specific data and are "
+                "not generally created/configured by content authors in Studio."
+            )
+            field_info = self._make_field_info(field_name, field)
+            if field_info is not None:
+                if field_info["type"] == "string":
+                    field_info["default"] = self.ugettext(field_info.get("default"))
+                    field_info["value"] = self.ugettext(field_info.get("value"))
+                context["fields"].append(field_info)
+
+        fragment.content = self.loader.render_django_template(
+            "templates/studio_edit.html", context
+        )
+        fragment.add_javascript(self.loader.load_unicode("public/studio_edit.js"))
+        fragment.initialize_js("StudioEditableXBlockMixin")
 
         return fragment
 
@@ -150,16 +196,14 @@ class XBlockControlledNavigation(
         }
 
         fragment.add_content(
-            LOCAL_RESOURCE_LOADER.render_django_template(
-                "static/html/controlled_navigation.html",
-                render_context,
-                i18n_service=self.runtime.service(self, "i18n"),
+            self.render_template(
+                "public/html/controlled_navigation.html", render_context
             )
         )
         fragment.add_javascript(
-            self.resource_string("static/js/src/controlled_navigation.js")
+            self.resource_string("public/js/src/controlled_navigation.js")
         )
-        fragment.add_css(self.resource_string("static/css/controlled_navigation.css"))
+        fragment.add_css(self.resource_string("public/css/controlled_navigation.css"))
         fragment.initialize_js("XBlockControlledNavigation")
 
         return fragment
