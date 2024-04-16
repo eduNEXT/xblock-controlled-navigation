@@ -86,7 +86,6 @@ class TestXblockControlledNavegation(TestCase):
             "child_content": "child_content",
             "is_first_child": True,
             "is_last_child": False,
-            "forward_navigation_only": self.block.forward_navigation_only,
         }
 
         self.block.student_view({})
