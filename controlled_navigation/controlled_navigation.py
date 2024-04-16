@@ -40,21 +40,21 @@ class XBlockControlledNavigation(
 
     randomness = Boolean(
         display_name=_("Randomness"),
-        help=_("When enabled, the children will be displayed in a random order."),
+        help=_("When enabled, the children of the component will be displayed in a random order."),
         scope=Scope.settings,
         default=False,
     )
 
     next_button_text = String(
         display_name=_("Next Button Text"),
-        help=_("Text for the next button."),
+        help=_("Text for the next button used to navigate forward through the components' children."),
         scope=Scope.settings,
         default=_("Next Question"),
     )
 
     prev_button_text = String(
         display_name=_("Previous Button Text"),
-        help=_("Text for the previous button."),
+        help=_("Text for the previous button used to navigate back through the components' children."),
         scope=Scope.settings,
         default=_("Previous Question"),
     )
@@ -180,7 +180,8 @@ class XBlockControlledNavigation(
         """
         if not self.current_child_id:
             children = children_ids or self.get_children_ids()
-            self.current_child_id = children[0]
+            if children:
+                self.current_child_id = children[0]
         return self.current_child_id
 
     def get_children_ids(self) -> List[str]:
