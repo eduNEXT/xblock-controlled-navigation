@@ -2,7 +2,10 @@
 
 .controlled-navigation-block {
     display: grid;
-    margin: 20px;
+}
+
+.button-container {
+    margin: 40px 0;
 }
 
 .prev-button {

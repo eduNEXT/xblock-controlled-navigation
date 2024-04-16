@@ -4,8 +4,7 @@
     <div>
         {{ child_content | safe }}
     </div>
-    </br>
-    <div>
+    <div class="button-container">
         {% if not is_first_child %}
             <button class="prev-button" id="prev">{% trans block.prev_button_text %}</button>
         {% endif %}
