@@ -16,10 +16,21 @@ Unreleased
 
 *
 
+0.2.0 – 2024-04-16
+**********************************************
+
+Added
+=====
+
+* Added Controlled Nagivation with randomization.
+* Spanish (es_ES/es_419) translations for the XBlock.
+* Added Forward Nagivation Only setting.
+* Added Subset Size setting for randomization.
+
 0.1.0 – 2024-03-26
 **********************************************
 
 Added
 =====
 
-* First release on PyPI.
+* First release.
