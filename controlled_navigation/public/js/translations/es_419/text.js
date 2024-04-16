@@ -30,12 +30,12 @@
     "Next Button Text": "Texto del Bot\u00f3n Siguiente",
     "Next Question": "Siguiente Pregunta",
     "Previous Button Text": "Texto del Bot\u00f3n Anterior",
-    "Previous Question": "Anterior Pregunta",
+    "Previous Question": "Pregunta Anterior",
     "Randomness": "Aleatoriedad",
-    "Text that will be displayed on the next button to navigate to the next child.": "Texto que se mostrar\u00e1 en el bot\u00f3n siguiente para navegar al siguiente hijo.",
-    "Text that will be displayed on the previous button to navigate to the previous child.": "Texto que se mostrar\u00e1 en el bot\u00f3n anterior para navegar al hijo anterior.",
+    "Text for the next button used to navigate forward through the components' children.": "Texto para el bot\u00f3n siguiente utilizado para navegar hacia adelante a trav\u00e9s de los hijos del componente.",
+    "Text for the previous button used to navigate back through the components' children.": "Texto para el bot\u00f3n anterior utilizado para navegar hacia atr\u00e1s a trav\u00e9s de los hijos del componente.",
     "The display name for this component.": "El nombre a mostrar para este componente.",
-    "When enabled, the children will be displayed in a random order.": "Cuando est\u00e1 habilitado, los hijos se mostrar\u00e1n en orden aleatorio."
+    "When enabled, the children of the component will be displayed in a random order.": "Cuando est\u00e1 habilitado, los hijos del componente se mostrar\u00e1n en un orden aleatorio."
   };
   for (const key in newcatalog) {
     django.catalog[key] = newcatalog[key];

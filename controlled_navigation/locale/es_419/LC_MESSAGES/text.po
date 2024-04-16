@@ -37,8 +37,12 @@ msgid "Randomness"
 msgstr "Aleatoriedad"
 
 #: controlled_navigation.py:40
-msgid "When enabled, the children will be displayed in a random order."
-msgstr "Cuando está habilitado, los hijos se mostrarán en orden aleatorio."
+msgid ""
+"When enabled, the children of the component will be displayed in a random "
+"order."
+msgstr ""
+"Cuando está habilitado, los hijos del componente se mostrarán en un orden "
+"aleatorio."
 
 #: controlled_navigation.py:46
 msgid "Next Button Text"
@@ -46,10 +50,11 @@ msgstr "Texto del Botón Siguiente"
 
 #: controlled_navigation.py:47
 msgid ""
-"Text that will be displayed on the next button to navigate to the next "
-"child."
+"Text for the next button used to navigate forward through the components' "
+"children."
 msgstr ""
-"Texto que se mostrará en el botón siguiente para navegar al siguiente hijo."
+"Texto para el botón siguiente utilizado para navegar hacia adelante a través "
+"de los hijos del componente."
 
 #: controlled_navigation.py:49
 msgid "Next Question"
@@ -59,15 +64,17 @@ msgstr "Siguiente Pregunta"
 msgid "Previous Button Text"
 msgstr "Texto del Botón Anterior"
 
+#: controlled_navigation.py:54
 msgid ""
-"Text that will be displayed on the previous button to navigate to the "
-"previous child."
+"Text for the previous button used to navigate back through the components' "
+"children."
 msgstr ""
-"Texto que se mostrará en el botón anterior para navegar al hijo anterior."
+"Texto para el botón anterior utilizado para navegar hacia atrás a través de "
+"los hijos del componente."
 
 #: controlled_navigation.py:56
 msgid "Previous Question"
-msgstr "Anterior Pregunta"
+msgstr "Pregunta Anterior"
 
 #: controlled_navigation.py:60
 msgid "Randomized Children IDs"
@@ -85,6 +92,6 @@ msgstr ""
 msgid "Current child id for the student."
 msgstr ""
 
-#: controlled_navigation.py:369
+#: controlled_navigation.py:374
 msgid "Dummy"
 msgstr ""
