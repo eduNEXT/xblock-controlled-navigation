@@ -14,8 +14,9 @@ asgiref==3.8.1
     # via
     #   -r requirements/base.txt
     #   django
-backports-zoneinfo==0.2.1
+backports-zoneinfo==0.2.1 ; python_version < "3.9"
     # via
+    #   -c requirements/constraints.txt
     #   -r requirements/base.txt
     #   django
 binaryornot==0.4.4
@@ -60,6 +61,8 @@ django-appconf==1.0.6
 django-statici18n==2.4.0
     # via -r requirements/base.txt
 edx-i18n-tools==1.5.0
+    # via -r requirements/base.txt
+edx-opaque-keys==2.5.1
     # via -r requirements/base.txt
 exceptiongroup==1.2.0
     # via pytest
@@ -123,7 +126,9 @@ path==16.14.0
     #   -r requirements/base.txt
     #   edx-i18n-tools
 pbr==6.0.0
-    # via stevedore
+    # via
+    #   -r requirements/base.txt
+    #   stevedore
 pluggy==1.4.0
     # via pytest
 polib==1.2.0
@@ -132,6 +137,10 @@ polib==1.2.0
     #   edx-i18n-tools
 pygments==2.17.2
     # via rich
+pymongo==3.13.0
+    # via
+    #   -r requirements/base.txt
+    #   edx-opaque-keys
 pypng==0.20220715.0
     # via xblock-sdk
 pytest==8.1.1
@@ -190,7 +199,10 @@ sqlparse==0.4.4
     #   -r requirements/base.txt
     #   django
 stevedore==5.2.0
-    # via code-annotations
+    # via
+    #   -r requirements/base.txt
+    #   code-annotations
+    #   edx-opaque-keys
 text-unidecode==1.3
     # via python-slugify
 tomli==2.0.1
@@ -203,6 +215,7 @@ typing-extensions==4.11.0
     # via
     #   -r requirements/base.txt
     #   asgiref
+    #   edx-opaque-keys
     #   rich
 urllib3==1.26.18
     # via

@@ -1,0 +1,15 @@
+{% load i18n %}
+
+<div class="controlled-navigation-block">
+    <div>
+        {{ child_content | safe }}
+    </div>
+    <div class="button-container">
+        {% if not is_first_child %}
+            <button class="prev-button" id="prev">{% trans block.prev_button_text %}</button>
+        {% endif %}
+        {% if not is_last_child %}
+            <button class="next-button" id="next">{% trans block.next_button_text %}</button>
+        {% endif %}
+    </div>
+</div>
