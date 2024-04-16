@@ -1,5 +1,6 @@
 """ This module contains the tests for the controlled_navigation XBlock. """
 
+import random
 from unittest.mock import Mock, patch
 
 from django.test import TestCase
@@ -32,6 +33,7 @@ class TestXblockControlledNavegation(TestCase):
         self.block.randomized_children_ids = []
         self.block.current_child_id = ""
         self.block.forward_navigation_only = True
+        self.block.subset_size = 0
         self.block._render_child_fragment = Mock()  # pylint: disable=protected-access
         self.block.render_template = Mock(return_value="Test render")
 
@@ -215,3 +217,28 @@ class TestXblockControlledNavegation(TestCase):
         result = self.block.is_last_child(children_ids)
 
         self.assertFalse(result)
+
+    @patch.object(random, "sample")
+    def test_generate_randomized_children_ids_no_subset(self, mock_sample: Mock):
+        """
+        Test `generate_randomized_children_ids` method when subset_size is not set.
+        """
+        self.block.children = ["child1", "child2", "child3"]
+
+        self.block.generate_randomized_children_ids()
+
+        mock_sample.assert_called_once_with(["child1", "child2", "child3"], 3)
+        self.assertEqual(self.block.randomized_children_ids, mock_sample.return_value)
+
+    @patch.object(random, "sample")
+    def test_generate_randomized_children_ids_with_subset(self, mock_sample: Mock):
+        """
+        Test `generate_randomized_children_ids` method when subset_size is set.
+        """
+        self.block.children = ["child1", "child2", "child3", "child4"]
+        self.block.subset_size = 2
+
+        self.block.generate_randomized_children_ids()
+
+        mock_sample.assert_called_once_with(["child1", "child2", "child3", "child4"], 2)
+        self.assertEqual(self.block.randomized_children_ids, mock_sample.return_value)
