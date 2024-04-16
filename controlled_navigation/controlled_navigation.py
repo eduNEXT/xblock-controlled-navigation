@@ -123,7 +123,7 @@ class XBlockControlledNavigation(
         root_xblock = context.get("root_xblock")
         is_root = (
             root_xblock
-            and root_xblock.location == self.location  # pylint: disable=no-member
+            and root_xblock.location == self.location
         )
         if is_root:
             # User has clicked the "View" link. Show a preview of all possible children:
