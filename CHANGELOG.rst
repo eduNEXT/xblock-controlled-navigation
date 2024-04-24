@@ -16,7 +16,15 @@ Unreleased
 
 *
 
-0.2.0 – 2024-04-16
+0.2.1 - 2024-04-24
+**********************************************
+
+Changed
+=======
+
+* Add translations folder in package data.
+
+0.2.0 - 2024-04-16
 **********************************************
 
 Added
@@ -27,7 +35,7 @@ Added
 * Added Forward Nagivation Only setting.
 * Added Subset Size setting for randomization.
 
-0.1.0 – 2024-03-26
+0.1.0 - 2024-03-26
 **********************************************
 
 Added
