@@ -194,5 +194,5 @@ setup(
             "controlled_navigation = controlled_navigation:XBlockControlledNavigation",
         ]
     },
-    package_data=package_data("controlled_navigation", ["static", "public"]),
+    package_data=package_data("controlled_navigation", ["static", "public", "translations"]),
 )
