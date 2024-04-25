@@ -41,6 +41,9 @@ components. So, we need to include the script manually.
                             height: newHeight,
                         },
                     },
+                    // In chromium based browsers `document.referrer` is not returning the URL of the
+                    // MFE, instead it returns the URL of the LMS, so we need to accept all destination
+                    // sources so that the message can be sent without problems.
                     "*"
                 );
             }
